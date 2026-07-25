@@ -1,0 +1,24 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/*.pyc
+
+# Environment
+backend/.env
+
+# ChromaDB
+backend/chroma_db/
+
+# Uploaded data
+backend/uploads/
+backend/data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+frontend/node_modules/
+
+# Logs
+*.log
