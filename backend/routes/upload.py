@@ -5,7 +5,7 @@ import time
 
 from services.chunk_service import create_chunks
 from services.pdf_service import extract_text_from_pdf
-from services.embedding_service import generate_embeddings
+# from services.embedding_service import generate_embeddings
 from services.vector_store import store_chunks
 from services.upload_status import update_status
 
@@ -60,7 +60,7 @@ async def upload_book(file: UploadFile = File(...)):
 
     start = time.time()
 
-    embeddings = generate_embeddings(chunks)
+    # embeddings = generate_embeddings(chunks)
 
     print(f"Embedding: {time.time() - start:.2f}s")
 
@@ -73,10 +73,10 @@ async def upload_book(file: UploadFile = File(...)):
 
     print(">>> BEFORE store_chunks()")
 
-    store_chunks(
-        chunks,
-        file.filename
-    )
+    # store_chunks(
+    #   chunks,
+    #   file.filename
+    # )
 
     print(">>> AFTER store_chunks()")
 
