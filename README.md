@@ -1,4 +1,5 @@
-# 📚 AcComp – Your Personal AI Academic Companion
+# 📚 AcComp 
+-- Your Personal AI Assistant for Academic Learning and Concept Mastery --
 
 AcComp is an AI-powered academic learning assistant designed to transform lengthy technical textbooks into an interactive learning experience. Instead of manually searching through hundreds of pages, students can upload an academic book and ask questions naturally. The AI analyzes the uploaded content and delivers accurate, context-aware answers in either concise exam-focused form or detailed conceptual explanations.
 
@@ -186,8 +187,4 @@ npm run dev
 
 **Nitin Anand**
 
-AI • Education • Intelligent Learning Systems
-
 ---
-
-## ⭐ If you found this project useful, consider giving it a star!
