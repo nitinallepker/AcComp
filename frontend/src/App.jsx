@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import BookSidebar from "./components/BookSidebar";
+import BookSidebar from "./components/BookSideBar";
 import ChatWindow from "./components/ChatWindow";
 import ChatInput from "./components/ChatInput";
 import ModeSelector from "./components/ModeSelector";
