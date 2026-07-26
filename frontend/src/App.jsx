@@ -9,6 +9,8 @@ import UploadBook from "./components/UploadBook";
 
 import "./App.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [books, setBooks] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
@@ -25,9 +27,7 @@ function App() {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get(
-        "http://127.0.0.1:8000/books"
-      );
+      const response = await axios.get(`${API_URL}/books`);
 
       setBooks(response.data);
 
@@ -69,7 +69,7 @@ function App() {
 
     try {
       await axios.delete(
-        `http://127.0.0.1:8000/books/${encodeURIComponent(book)}`
+        `${API_URL}/books/${encodeURIComponent(book)}`
       );
 
       setBookChats((prev) => {
@@ -120,7 +120,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/chat",
+        `${API_URL}/chat`,
         {
           question,
           book_name: selectedBook,
@@ -153,9 +153,7 @@ function App() {
 
   return (
     <div className="app">
-
       <aside className="sidebar">
-
         <h2 className="sidebar-title">
           Books
         </h2>
@@ -170,18 +168,14 @@ function App() {
           setSelectedBook={setSelectedBook}
           onDeleteBook={handleDeleteBook}
         />
-
       </aside>
 
       <main className="main-content">
+        <h1>AcComp</h1>
 
-        <h1>
-          AcComp
-        </h1>
-           <p>
-              -- Your personal AI assistant for academic learning and concept mastery -- 
-            </p>
-        
+        <p>
+          -- Your personal AI assistant for academic learning and concept mastery --
+        </p>
 
         <ModeSelector
           mode={mode}
@@ -197,9 +191,7 @@ function App() {
           onSend={handleSend}
           loading={loading}
         />
-
       </main>
-
     </div>
   );
 }

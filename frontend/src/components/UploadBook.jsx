@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { FaUpload } from "react-icons/fa";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function UploadBook({ onUploadSuccess }) {
   const [uploading, setUploading] = useState(false);
 
@@ -17,7 +19,7 @@ function UploadBook({ onUploadSuccess }) {
       setUploading(true);
 
       await axios.post(
-        "http://127.0.0.1:8000/upload",
+        `${API_URL}/upload`,
         formData,
         {
           headers: {
@@ -40,7 +42,6 @@ function UploadBook({ onUploadSuccess }) {
 
   return (
     <div className="upload-container">
-
       <label
         htmlFor="book-upload"
         className="upload-btn"
@@ -61,7 +62,6 @@ function UploadBook({ onUploadSuccess }) {
         hidden
         onChange={handleUpload}
       />
-
     </div>
   );
 }
